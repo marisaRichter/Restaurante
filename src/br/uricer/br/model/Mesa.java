@@ -6,8 +6,9 @@ import java.util.List;
 
 public class Mesa {
     
+    private int numero;
     private boolean ocupada;
-    private List<Item> itens = new ArrayList<Item>();
+    private List<Item> Itens = new ArrayList<Item>();
     private BigDecimal valorTotal;
 
     public void ocupar() {
@@ -21,7 +22,7 @@ public class Mesa {
     public void totalizar(){
         valorTotal = new BigDecimal("0.0");
         
-        for(Item item:itens){
+        for(Item item:Itens){
             item.totalizar();
             valorTotal = valorTotal.add(item.getValorTotal());
         }
@@ -38,11 +39,11 @@ public class Mesa {
     }
 
     public List<Item> getItens() {
-        return itens;
+        return Itens;
     }
 
     public void setItens(List<Item> itens) {
-        this.itens = itens;
+        this.Itens = itens;
     }
 
     public BigDecimal getValorTotal() {

@@ -1,6 +1,7 @@
 package br.uricer.br.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Item {
     
@@ -10,7 +11,7 @@ public class Item {
     private BigDecimal valorTotal;
     
     public void totalizar(){
-        valorTotal = quantidade.multiply(valorUnitario);
+        valorTotal = quantidade.multiply(valorUnitario).setScale(2, RoundingMode.HALF_EVEN);
     }
 
     public Produto getProduto() {
