@@ -10,6 +10,10 @@ public class Mesa {
     private boolean ocupada;
     private List<Item> Itens = new ArrayList<Item>();
     private BigDecimal valorTotal;
+    
+    public Mesa(int numero){
+        this.numero = numero;
+    }
 
     public void ocupar() {
         this.ocupada = true;
@@ -32,12 +36,23 @@ public class Mesa {
     public void adicionarItem(Produto produto, BigDecimal quantidade){
         Item novoItem = new Item();
         novoItem.setProduto(produto);
+        novoItem.setQuantidade(quantidade);
+        novoItem.setValorUnitario(produto.getPreco());
+        Itens.add(novoItem);
     }
     
     public boolean isOcupada() {
         return ocupada;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
     public List<Item> getItens() {
         return Itens;
     }
